@@ -4,28 +4,9 @@ Email : codebee2014@gmail.com
 Website : codebee.co.th
 Company : codebee company limited
 */
-let total;
-function calcArea() {
 
 
-    //microwave
-    let wide = Number(document.querySelector("#wide").value);
-    let long = Number(document.querySelector("#long").value);
-    let wp = Number(document.querySelector("#wp").value);
-
-    total = [((((wide * long) / 2).toFixed(0)) * wp) / 1000];
-
-    document.getElementById("sum").value = total;
-	// var numnum = document.getElementById("sum");
-    // var intairconn = parseInt(num3);
-    //console.log("value of microwave is " + total[0] + " and " + total[1]);
-
-	// document.getElementById("num1").value = numnum;
-	// console.log(total);
-	//callnum(total);
-}
-
-;(function( $ ){
+(function( $ ){
 	$.fn.AutoProvince = function( options ) {
 		var Setting = $.extend( {
 			PROVINCE:		'#province', // select div สำหรับรายชื่อจังหวัด

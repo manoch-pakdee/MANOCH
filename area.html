@@ -20,17 +20,17 @@
     <center>
 
         <div class="div">
-            <h2>ซอฟต์ออกแบบระบบผลิตไฟฟ้าด้วยพลังแสงอาทิตย์</h2>
-            <h3>Software Designs Electrical Systems Produced By Solar</h3>
+            <h2>ซอฟต์แวร์ออกแบบระบบผลิตไฟฟ้าด้วยพลังแสงอาทิตย์</h2>
+            <h3>Software Design Electrical Systems Produced By Solar</h3>
 
         </div>
         <a class="load" href="./index.html">หน้าแรก</a>
         <a class="load" href="./main.html">พฤติกรรมการใช้ไฟฟ้า</a>
-        <a class="load" href="./area.html">พื่นที่</a>
+        <a class="load" href="./area.html">พื้นที่</a>
         <a class="sss" href="./energy.html">การประเมินพลังงานไฟฟ้า</a>
-        <a class="sss" href="./ิpay-back-.period.html">ระยะเวลาในการคืนทุน</a>
+        <a class="sss" href="./pay-back-.period.html">ระยะเวลาในการคืนทุน</a>
 
-        <h4>พื่นที่</h4>
+        <h4>พื้นที่</h4>
         <table>
             <center>
 
@@ -121,11 +121,35 @@
                         ติดตั้งระบบ Solar PV Rooftop ขนาด
                     </td>
                     <td>
-                        <input type="text" id="sum" readonly="readonly" /> kwp
-                        <input type="button" value="คำนวน" onclick="calcArea()" />
+                        <input type="text" id="sum" value="0"readonly="readonly" /> kwp
+                        <!-- <input type="button" id="area" value="" onclick="calcArea()" /> -->
+                        <!-- <button type="button" id="bt1" onclick="calcArea()" />คำนวณ -->
+                        <button type="button" id="bt1" onclick="calcArea()">คำนวณ</button>
+                        <button type="button" name="ยืนยัน" onclick="saveMy()">ยืนยัน</button>                        
+                        <script>
+                            function saveMy() {
+                                var getInput = parseFloat(document.getElementById("sum").value);
+                                // var getInput = {
+                                //     localSum: document.getElementById("sum").value
+                                // }
+
+                                let wide = Number(document.querySelector("#wide").value);
+                                let long = Number(document.querySelector("#long").value);
+                                let wp = Number(document.querySelector("#wp").value);
+
+                                total = [((((wide * long) / 2).toFixed(0)) * wp) / 1000];
+
+                                document.getElementById("sum").value = total;
+
+                                useTotal = document.getElementById("sum").value;
+                                localStorage.setItem('totalStorage', JSON.stringify(getInput));
+                            }
+
+                        </script>
                     </td>
                 </tr>
-
+                <div id="testcal">
+                </div>
 
 
 
@@ -134,7 +158,8 @@
         </table>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="AutoProvince.js">callnum();</script>
+        <script type="text/javascript" src="./function.js"></script>
+        <script type="text/javascript" src="./AutoProvince.js"></script>
         <script>
             $('body').AutoProvince({
                 PROVINCE: '#province', // select div สำหรับรายชื่อจังหวัด
