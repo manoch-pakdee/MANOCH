@@ -37,6 +37,12 @@
                         </td>
                         <td>
                             <input type="text" id="num1"/>kpw
+                            <script>
+                                document.getElementById('num1').innerHTML ;
+                                var showTotal = localStorage.getItem("totalStorage");
+                                document.getElementById('num1').value = showTotal;
+                                console.log(showTotal);
+                            </script>
                         </td>
                         
                     </tr>
@@ -47,6 +53,12 @@
                         </td>
                         <td>
                             <input type="text" id="num2"/>หน่วย
+                            <script>
+                                document.getElementById('num2').innerHTML ;
+                                var showTotal = localStorage.getItem("SumStorage");
+                                document.getElementById('num2').value = showTotal;
+                                console.log(showTotal);
+                            </script>
                         </td>
                         
                     </tr>
@@ -95,7 +107,8 @@
                               
                               // var intairconn = parseInt(num3);
                               console.log("value of microwave is " + total[0]+" and "+total[1]);
-                                     }   
+                                     } 
+                                       
                                  </script> 
                          </td>
                     </tr> 

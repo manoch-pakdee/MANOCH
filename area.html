@@ -126,26 +126,7 @@
                         <!-- <button type="button" id="bt1" onclick="calcArea()" />คำนวณ -->
                         <button type="button" id="bt1" onclick="calcArea()">คำนวณ</button>
                         <button type="button" name="ยืนยัน" onclick="saveMy()">ยืนยัน</button>                        
-                        <script>
-                            function saveMy() {
-                                var getInput = parseFloat(document.getElementById("sum").value);
-                                // var getInput = {
-                                //     localSum: document.getElementById("sum").value
-                                // }
-
-                                let wide = Number(document.querySelector("#wide").value);
-                                let long = Number(document.querySelector("#long").value);
-                                let wp = Number(document.querySelector("#wp").value);
-
-                                total = [((((wide * long) / 2).toFixed(0)) * wp) / 1000];
-
-                                document.getElementById("sum").value = total;
-
-                                useTotal = document.getElementById("sum").value;
-                                localStorage.setItem('totalStorage', JSON.stringify(getInput));
-                            }
-
-                        </script>
+                    
                     </td>
                 </tr>
                 <div id="testcal">

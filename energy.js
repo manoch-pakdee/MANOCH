@@ -216,4 +216,21 @@ function appendData1(data, num, pw, PR) {
   }
 
 }
+function saveMe() {
+  var getInput = parseFloat(document.getElementById("table-data1").value);
+  var mytable2 = document.getElementById("table-data1");
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].ID == num) {
+
+      let template2 = `
+            <tr>
+                
+                <td>${(data[i].Total * pw * (PR / 100)).toFixed(1)}</td>
+            </tr>
+            `;
+            mytable2.innerHTML += template2;
+            document.getElementById("table-data1").value = template2;
+  useTotal = document.getElementById("table-data1").value;
+  localStorage.setItem('SumStorage', JSON.stringify(getInput));
+}}}
 
